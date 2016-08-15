@@ -1,0 +1,77 @@
+.animate {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.movie-card {
+    width: 100%;
+    border: 1px solid rgb(215, 215, 215);
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    &> img {
+        margin-bottom: 60px;
+    }
+    .movie-card-details, .movie-card-details .movie-card-header {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        padding: 0 15px;
+        background: rgb(255, 255, 255);
+        text-align: center;
+    }
+    .movie-card-details {
+        .movie-card-header {
+            height: auto;		
+            bottom: 100%;
+            padding: 10px 5px;
+            h1, h3 {
+                text-transform: uppercase;
+            }
+            h1 {
+                color: rgb(62, 62, 62);
+                font-size: 22px;
+                font-weight: 900;
+            }
+            h3 {
+                color: rgb(142, 182, 52);
+                font-size: 15px;
+                font-weight: 400;
+                margin-top: 5px;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-button {
+            width: 8px;
+            height: 0px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgb(160, 160, 160);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgb(130, 130, 130);
+        }
+    }
+    &:hover {
+        .movie-card-details {
+            bottom: 0px;
+            overflow: auto;
+            padding-bottom: 25px;
+            .movie-card-header {
+                position: relative;
+                bottom: 0px;
+                padding-top: 45px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+}

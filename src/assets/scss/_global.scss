@@ -1,0 +1,53 @@
+$breakpoint-min: 0;
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: url(../img/bg.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.app {
+    .logo {
+        display: inline-block;
+        padding-top:50px;
+        color: #fff;
+        .glyphicon {
+            font-size: 5em;
+            display: inline-block;
+        }
+        .sitename {
+            display: inline-block;
+            line-height: 0.75;
+            margin-left: 6px;
+            span {
+                display: block;
+                &.title {
+                    font-size: 4em;
+                }
+                &.slogan {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+    .main-container {
+        margin: 5px auto 50px;
+        padding-bottom: 50px;
+        padding-top: 15px;
+        background: #eee;
+    }
+    .divider {
+        height: 1px;
+        width:100%;
+        display: block; /* for use on default inline elements like span */
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }
+}
