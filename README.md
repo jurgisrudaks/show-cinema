@@ -1,4 +1,4 @@
-![Screenshot](src/assets/img/screenshot.png)
+![Screenshot](src/assets/img/screenshot.jpg)
 
 # Movies site
 
