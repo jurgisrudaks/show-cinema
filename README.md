@@ -14,8 +14,7 @@
 ### Prerequisites
 - Install NodeJS and NPM
 - Install MongoDB
-    > https://www.mongodb.com/download-center#community
-- Clone the repository
+- Clone the repository `git clone https://github.com/jurgisrudaks/show-cinema.git`
 - Run `npm install`
 - Run mongoDB server with `mongod --dbpath ./api/db`
 - Run `mongorestore --db cinema ./dump/cinema` to import database structure and dummy data
