@@ -27,7 +27,7 @@ apiRouter.use(function(req, res, next) {
 });
 
 apiRouter.route('/movies').get(function(req, res) {
-    Movie.paginate({}, { page: parseInt(req.query.page) || 1, limit: parseInt(req.query.limit) || 10 }, function(err, result) {
+    Movie.paginate({}, { page: parseInt(req.query.page) || 1, limit: parseInt(req.query.limit) || 10, sort: '-release_date' }, function(err, result) {
         if (err)
             res.send(err);
         res.json({

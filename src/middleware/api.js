@@ -1,3 +1,4 @@
+import 'isomorphic-fetch'
 import * as apiConfig from '../constants/Api'
 
 function callApi(endpoint, options = {method: 'GET'}) {
