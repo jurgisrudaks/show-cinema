@@ -6,16 +6,20 @@ var port = 3000;
 
 app.use(express.static("dist"));
 
-app.get(["/","/explore", "/movie/*"], (req, res) => {
+app.get(["/explore", "/movie/*"], (req, res) => {
     res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
-app.use(function(req, res, next){
+app.get("/", (req, res) => {
+    res.redirect('/explore');
+});
+
+app.use(function(req, res, next) {
     res.status(404);
 
     // respond with html page
     if (req.accepts('html')) {
-        res.redirect('/explore')
+        res.redirect('/explore');
         return;
     }
 
@@ -31,8 +35,8 @@ app.use(function(req, res, next){
 
 app.listen(port, function(error) {
     if (error) {
-        console.error(error)
+        console.error(error);
     } else {
-        console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
+        console.info("==> Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port);
     }
 })

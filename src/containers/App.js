@@ -17,7 +17,7 @@ class App extends Component {
         this.props.resetErrorMessage()
         e.preventDefault()
     }
-
+    
     renderErrorMessage() {
         const { errorMessage } = this.props
         if (!errorMessage) {
