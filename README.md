@@ -42,5 +42,4 @@
 - ESLint linter for identifying and reporting JS problems/patterns
 
 ## Credits
-Author: Jurgis Rudaks
-Date:   08/2016
+Jurgis Rudaks
