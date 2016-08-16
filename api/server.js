@@ -11,7 +11,7 @@ app.use(morgan('dev')); // log requests to the console
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port     = process.env.PORT || 8080;
+var port     = process.env.PORT || 3001;
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/cinema');
 var Movie     = require('./models/movie');
@@ -20,6 +20,9 @@ var apiRouter = express.Router();
 
 apiRouter.use(function(req, res, next) {
     console.log('Something is happening.');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,POST');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
@@ -56,16 +59,16 @@ apiRouter.route('/movies/:movie_id/comments').get(function(req, res) {
         });
     });
 }).post(function(req, res) {
-    
+
     console.log(req.body);
-    
+
     var comment = new Comment({
         movie_id: req.params.movie_id,
         date: Date.now(),
         text: req.body.text,
         author: req.body.author
     })
-    
+
     comment.save(function (err, comment) {
         if (err)
             console.log(err);

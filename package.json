@@ -6,7 +6,8 @@
     "scripts": {
         "start:dev": "better-npm-run lint:src && better-npm-run serve:dev",
         "start:prod": "better-npm-run lint:src && better-npm-run build:prod && better-npm-run serve:prod",
-        "start:api": "better-npm-run start:api"
+        "start:api": "better-npm-run start:api",
+        "build:prod": "better-npm-run lint:src && better-npm-run build:prod"
     },
     "betterScripts": {
         "serve:dev": {
@@ -39,13 +40,9 @@
     "dependencies": {
         "babel-polyfill": "^6.13.0",
         "better-npm-run": "0.0.10",
-        "body-parser": "^1.15.2",
         "bootstrap": "^3.3.7",
-        "express": "^4.14.0",
         "isomorphic-fetch": "^2.2.1",
         "jquery": "^3.1.0",
-        "mongoose": "^4.5.8",
-        "mongoose-paginate": "^5.0.0",
         "morgan": "^1.7.0",
         "react": "^15.3.0",
         "react-dom": "^15.3.0",
